@@ -4,8 +4,9 @@ import pickle
 import numpy as np
 
 # Load the  model
-filename = 'model.pkl'
-regressor = pickle.load(open(filename, 'rb'))
+
+regressor = pickle.load(open('model.pkl', 'rb'))
+
 
 app = Flask(__name__)
 
