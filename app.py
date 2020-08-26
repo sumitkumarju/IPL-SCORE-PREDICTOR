@@ -5,7 +5,7 @@ import numpy as np
 
 # Load the  model
 
-regressor = pickle.load(open('model.pkl', 'rb'))
+#regressor = pickle.load(open('model.pkl', 'rb'))
 
 
 app = Flask(__name__)
@@ -66,12 +66,12 @@ def predict():
         wickets_in_prev_5 = int(request.form['wickets_in_prev_5'])
 
 
-        print(overs,runs,wickets,runs_in_prev_5,wickets_in_prev_5)
+        #print(overs,runs,wickets,runs_in_prev_5,wickets_in_prev_5)
 
         temp_array = temp_array + [overs, runs, wickets, runs_in_prev_5, wickets_in_prev_5]
 
         data = np.array([temp_array])
-        my_prediction = int(regressor.predict(data)[0])
+        my_prediction = 100#int(regressor.predict(data)[0])
 
         return render_template('result.html', lower_limit = my_prediction-10, upper_limit = my_prediction+5)
 
