@@ -1,9 +1,9 @@
-# Importing essential libraries
+
 from flask import Flask, render_template, request
 import pickle
 import numpy as np
 
-# Load the  model
+
 
 regressor = pickle.load(open('model_1.pkl', 'rb'))
 
@@ -66,7 +66,6 @@ def predict():
         wickets_in_prev_5 = int(request.form['wickets_in_prev_5'])
 
 
-        #print(overs,runs,wickets,runs_in_prev_5,wickets_in_prev_5)
 
         temp_array = temp_array + [overs, runs, wickets, runs_in_prev_5, wickets_in_prev_5]
 
